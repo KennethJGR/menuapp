@@ -32,3 +32,14 @@ model Category {
   updatedAt DateTime  @updatedAt
   Products  Product[]
 }
+
+model Order {
+  id        Int         @id @default(autoincrement())
+  name      String
+  date      String
+  total     Float
+  request   Json
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+  
+}
