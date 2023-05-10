@@ -10,7 +10,6 @@ export const getServerSideProps = async () => {
   const prisma = new PrismaClient();
   const categories = await prisma.category.findMany();
 
-  console.log(categories);
 
   return {
     props: {

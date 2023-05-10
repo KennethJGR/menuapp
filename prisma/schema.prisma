@@ -11,33 +11,25 @@ datasource db {
 }
 
 model Product {
-  id        Int      @id @default(autoincrement())
-  name      String
-  price     Float
-  image     String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
+  id    Int    @id @default(autoincrement())
+  name  String
+  price Float
+  image String
   category Category @relation(fields: [categoryId], references: [id])
-
   categoryId Int
 }
 
 model Category {
-  id        Int       @id @default(autoincrement())
-  name      String
-  icon      String
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
-  Products  Product[]
+  id   Int    @id @default(autoincrement())
+  name String
+  icon String
+  Products Product[]
 }
 
 model Order {
-  id        Int      @id @default(autoincrement())
-  name      String
-  date      String
-  total     Float
-  request   Json
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id      Int    @id @default(autoincrement())
+  name    String
+  date    String
+  total   Float
+  request Json
 }
