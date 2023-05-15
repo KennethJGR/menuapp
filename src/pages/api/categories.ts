@@ -8,5 +8,5 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const categories = await prisma.category.findMany();
-  res.status(200).json({ categories });
+  res.status(200).json(categories);
 }
